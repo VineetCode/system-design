@@ -1,0 +1,18 @@
+Problem:
+
+Implement a simple rate limiter middleware for an API.
+
+The rule: Allow a maximum of 5 requests per minute per IP address.
+
+Requirements:
+
+Track requests based on client IP.
+If limit is exceeded, return a 429 (Too Many Requests) error.
+Use in-memory storage (dictionary or object) for simplicity.
+
+
+Requirements recap:
+✅ Track per IP
+✅ Allow max 5 requests per minute
+✅ Return 429 if exceeded
+✅ Use in-memory storage (Map)

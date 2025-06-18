@@ -6,11 +6,11 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 
-public class RateLimiter {
+public class DequeRateLimiter {
 
      // Max 5 requests per 60 seconds
      private static final int MAX_REQUESTS = 5;
-     private static final int WINDOW_SIZE = 60 * 1000; //in ms
+     private static final long WINDOW_SIZE = 60 * 1000; //in ms
 
      // Store: IP -> list of request timestamps
      private final Map<String, Deque<Long>> requestLogs = new ConcurrentHashMap<>();
@@ -49,7 +49,7 @@ public class RateLimiter {
 
     // Example usage
     public static void main(String[] args) throws InterruptedException {
-        RateLimiter rateLimiter = new RateLimiter();
+        DequeRateLimiter rateLimiter = new DequeRateLimiter();
 
         String ip = "192.168.1.10";
 
